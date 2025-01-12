@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bngrgk1jp3xu0"]
+[gd_scene load_steps=6 format=3 uid="uid://bngrgk1jp3xu0"]
 
 [ext_resource type="Script" path="res://entities/ball/ball.gd" id="1_gsjll"]
 [ext_resource type="FontFile" uid="uid://bklcbq12rujti" path="res://scenes/common_assets/fonts/PublicPixel-rv0pA.ttf" id="2_02lh2"]
+[ext_resource type="Texture2D" uid="uid://bobyn4jgo6vir" path="res://entities/ball/assets/ball.png" id="2_yj7bt"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_k14as"]
 friction = 0.0
@@ -11,7 +12,7 @@ bounce = 1.0
 radius = 22.0227
 
 [node name="Ball" type="RigidBody2D" node_paths=PackedStringArray("DirectionHintLabel") groups=["Ball"]]
-position = Vector2(644, 370)
+position = Vector2(640, 352)
 physics_material_override = SubResource("PhysicsMaterial_k14as")
 gravity_scale = 0.0
 can_sleep = false
@@ -23,22 +24,13 @@ angular_damp_mode = 1
 script = ExtResource("1_gsjll")
 DirectionHintLabel = NodePath("DirectionHintLabel")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Texture" type="Sprite2D" parent="."]
+position = Vector2(-3.8147e-06, 3.8147e-06)
+scale = Vector2(6.4, 6.4)
+texture = ExtResource("2_yj7bt")
 metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("CircleShape2D_273sm")
 
 [node name="DirectionHintLabel" type="Label" parent="."]

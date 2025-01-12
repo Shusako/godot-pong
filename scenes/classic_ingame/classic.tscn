@@ -1,12 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://bbmrc3f5amrwk"]
+[gd_scene load_steps=15 format=3 uid="uid://bbmrc3f5amrwk"]
 
 [ext_resource type="Script" path="res://scenes/classic_ingame/assets/game_controller.gd" id="1_igr2h"]
 [ext_resource type="PackedScene" uid="uid://bngrgk1jp3xu0" path="res://entities/ball/ball.tscn" id="2_55mtd"]
 [ext_resource type="Script" path="res://scenes/classic_ingame/assets/score_keeper.gd" id="3_fvqlf"]
+[ext_resource type="Texture2D" uid="uid://kgm2c6a28yky" path="res://scenes/classic_ingame/assets/background.png" id="4_1x120"]
 [ext_resource type="Script" path="res://entities/playerpaddle/player_paddle.gd" id="4_k7850"]
 [ext_resource type="Script" path="res://entities/cpupaddle/cpu_paddle.gd" id="5_4gxpd"]
+[ext_resource type="Texture2D" uid="uid://cxh0nwuyxm6fs" path="res://entities/playerpaddle/assets/paddle.png" id="5_pnabw"]
 [ext_resource type="Script" path="res://scenes/classic_ingame/assets/score_zone.gd" id="6_jkw5n"]
 [ext_resource type="FontFile" uid="uid://bklcbq12rujti" path="res://scenes/common_assets/fonts/PublicPixel-rv0pA.ttf" id="7_ftunn"]
+[ext_resource type="Texture2D" uid="uid://c5d2rqrcn4ui6" path="res://entities/cpupaddle/assets/paddle.png" id="7_h2uek"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_awbul"]
 friction = 0.0
@@ -39,19 +42,20 @@ process_callback = 0
 wait_time = 2.0
 one_shot = true
 
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(10, 10)
+texture = ExtResource("4_1x120")
+
 [node name="PlayerPaddle" type="StaticBody2D" parent="."]
 position = Vector2(32, 368)
 physics_material_override = SubResource("PhysicsMaterial_awbul")
 script = ExtResource("4_k7850")
 
-[node name="ColorRect" type="ColorRect" parent="PlayerPaddle"]
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -96.0
-offset_right = 40.0
-offset_bottom = 96.0
-grow_vertical = 2
+[node name="Texture" type="Sprite2D" parent="PlayerPaddle"]
+position = Vector2(20, -3.8147e-06)
+scale = Vector2(8, 8)
+texture = ExtResource("5_pnabw")
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="PlayerPaddle"]
 position = Vector2(-24, 0)
@@ -62,17 +66,10 @@ position = Vector2(1248, 368)
 physics_material_override = SubResource("PhysicsMaterial_exi6s")
 script = ExtResource("5_4gxpd")
 
-[node name="ColorRect" type="ColorRect" parent="CpuPaddle"]
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -40.0
-offset_top = -96.0
-offset_bottom = 96.0
-grow_horizontal = 0
-grow_vertical = 2
+[node name="Texture" type="Sprite2D" parent="CpuPaddle"]
+position = Vector2(-20, 1.14441e-05)
+scale = Vector2(8.00001, 8)
+texture = ExtResource("7_h2uek")
 
 [node name="CollisionShape2D2" type="CollisionPolygon2D" parent="CpuPaddle"]
 position = Vector2(24, 0)
