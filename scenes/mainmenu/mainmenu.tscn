@@ -1,9 +1,34 @@
-[gd_scene format=3 uid="uid://2nwg8acvunmq"]
+[gd_scene load_steps=5 format=3 uid="uid://2nwg8acvunmq"]
 
-[node name="Mainmenu" type="Control"]
+[ext_resource type="Texture2D" uid="uid://ckyu3043gnmma" path="res://scenes/mainmenu/assets/images/background.png" id="1_dth14"]
+[ext_resource type="Script" path="res://scenes/mainmenu/main_menu.gd" id="2_8usy1"]
+[ext_resource type="Theme" uid="uid://di4262esxkqrj" path="res://scenes/mainmenu/assets/ui_theme.tres" id="2_uiw2a"]
+[ext_resource type="PackedScene" uid="uid://bbmrc3f5amrwk" path="res://scenes/classic_ingame/classic.tscn" id="3_b5fhm"]
+
+[node name="Container" type="Control"]
+clip_contents = true
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+offset_right = 160.0
+offset_bottom = 90.0
+theme = ExtResource("2_uiw2a")
+script = ExtResource("2_8usy1")
+classicScene = ExtResource("3_b5fhm")
+
+[node name="background image" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 90.0
+texture = ExtResource("1_dth14")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 38.0
+offset_right = 99.0
+offset_bottom = 52.0
+text = "Play"
+text_direction = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_play_pressed"]

@@ -1,12 +1,12 @@
 [gd_scene load_steps=12 format=3 uid="uid://bbmrc3f5amrwk"]
 
-[ext_resource type="Script" path="res://scenes/ingame/assets/game_controller.gd" id="1_7i036"]
-[ext_resource type="PackedScene" uid="uid://bngrgk1jp3xu0" path="res://entities/ball/ball.tscn" id="2_y6lp3"]
-[ext_resource type="Script" path="res://scenes/ingame/assets/score_keeper.gd" id="3_30cur"]
-[ext_resource type="Script" path="res://entities/playerpaddle/player_paddle.gd" id="4_oqqdk"]
-[ext_resource type="Script" path="res://entities/cpupaddle/cpu_paddle.gd" id="5_gvbff"]
-[ext_resource type="Script" path="res://scenes/ingame/assets/score_zone.gd" id="6_hxn54"]
-[ext_resource type="FontFile" uid="uid://bklcbq12rujti" path="res://scenes/ingame/assets/PublicPixel-rv0pA.ttf" id="7_87o78"]
+[ext_resource type="Script" path="res://scenes/classic_ingame/assets/game_controller.gd" id="1_igr2h"]
+[ext_resource type="PackedScene" uid="uid://bngrgk1jp3xu0" path="res://entities/ball/ball.tscn" id="2_55mtd"]
+[ext_resource type="Script" path="res://scenes/classic_ingame/assets/score_keeper.gd" id="3_fvqlf"]
+[ext_resource type="Script" path="res://entities/playerpaddle/player_paddle.gd" id="4_k7850"]
+[ext_resource type="Script" path="res://entities/cpupaddle/cpu_paddle.gd" id="5_4gxpd"]
+[ext_resource type="Script" path="res://scenes/classic_ingame/assets/score_zone.gd" id="6_jkw5n"]
+[ext_resource type="FontFile" uid="uid://bklcbq12rujti" path="res://scenes/common_assets/fonts/PublicPixel-rv0pA.ttf" id="7_ftunn"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_awbul"]
 friction = 0.0
@@ -23,12 +23,12 @@ size = Vector2(1279.5, 18)
 size = Vector2(448, 720)
 
 [node name="Node2D" type="Node2D" node_paths=PackedStringArray("score_keeper")]
-script = ExtResource("1_7i036")
+script = ExtResource("1_igr2h")
 score_keeper = NodePath("ScoreKeeper")
-ball_scene = ExtResource("2_y6lp3")
+ball_scene = ExtResource("2_55mtd")
 
 [node name="ScoreKeeper" type="Node2D" parent="." node_paths=PackedStringArray("player_score_label", "cpu_score_label", "cpu_score_zone", "player_score_zone")]
-script = ExtResource("3_30cur")
+script = ExtResource("3_fvqlf")
 player_score_label = NodePath("../Hud/PlayerScoreLabel")
 cpu_score_label = NodePath("../Hud/CpuScoreLabel")
 cpu_score_zone = NodePath("../Border/ScoreLeft")
@@ -42,7 +42,7 @@ one_shot = true
 [node name="PlayerPaddle" type="StaticBody2D" parent="."]
 position = Vector2(32, 368)
 physics_material_override = SubResource("PhysicsMaterial_awbul")
-script = ExtResource("4_oqqdk")
+script = ExtResource("4_k7850")
 
 [node name="ColorRect" type="ColorRect" parent="PlayerPaddle"]
 anchors_preset = 4
@@ -60,7 +60,7 @@ polygon = PackedVector2Array(24, -96, 24, 96, 40, 96, 56, 80, 64, 8, 64, 0, 64, 
 [node name="CpuPaddle" type="StaticBody2D" parent="."]
 position = Vector2(1248, 368)
 physics_material_override = SubResource("PhysicsMaterial_exi6s")
-script = ExtResource("5_gvbff")
+script = ExtResource("5_4gxpd")
 
 [node name="ColorRect" type="ColorRect" parent="CpuPaddle"]
 anchors_preset = 6
@@ -90,14 +90,14 @@ position = Vector2(640, 728)
 shape = SubResource("RectangleShape2D_dvvxr")
 
 [node name="ScoreLeft" type="Area2D" parent="Border"]
-script = ExtResource("6_hxn54")
+script = ExtResource("6_jkw5n")
 
 [node name="Left" type="CollisionShape2D" parent="Border/ScoreLeft"]
 position = Vector2(-224, 360)
 shape = SubResource("RectangleShape2D_jcyg0")
 
 [node name="ScoreRight" type="Area2D" parent="Border"]
-script = ExtResource("6_hxn54")
+script = ExtResource("6_jkw5n")
 
 [node name="Right" type="CollisionShape2D" parent="Border/ScoreRight"]
 position = Vector2(1504, 360)
@@ -114,7 +114,7 @@ offset_top = 1.0
 offset_right = -704.0
 offset_bottom = 65.0
 grow_horizontal = 0
-theme_override_fonts/font = ExtResource("7_87o78")
+theme_override_fonts/font = ExtResource("7_ftunn")
 theme_override_font_sizes/font_size = 64
 text = "0"
 horizontal_alignment = 2
@@ -124,6 +124,6 @@ offset_left = 704.0
 offset_top = 1.0
 offset_right = 912.0
 offset_bottom = 65.0
-theme_override_fonts/font = ExtResource("7_87o78")
+theme_override_fonts/font = ExtResource("7_ftunn")
 theme_override_font_sizes/font_size = 64
 text = "0"
