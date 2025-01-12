@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bklcbq12rujti"
-path="res://.godot/imported/PublicPixel-rv0pA.ttf-dc6fd5b0d506847f59c7d3e7fde4e41a.fontdata"
+path="res://.godot/imported/PublicPixel-rv0pA.ttf-ba22702a86670c05b181909d60955d5f.fontdata"
 
 [deps]
 
-source_file="res://PublicPixel-rv0pA.ttf"
-dest_files=["res://.godot/imported/PublicPixel-rv0pA.ttf-dc6fd5b0d506847f59c7d3e7fde4e41a.fontdata"]
+source_file="res://scenes/ingame/assets/PublicPixel-rv0pA.ttf"
+dest_files=["res://.godot/imported/PublicPixel-rv0pA.ttf-ba22702a86670c05b181909d60955d5f.fontdata"]
 
 [params]
 
