@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wkm5wbqsnbjk"
-path="res://.godot/imported/Meteor.png-06dadcb0121ed9100561d8c7aceb01a4.ctex"
+uid="uid://bwdpnim5x3da1"
+path="res://.godot/imported/paddle.old.png-89adf3ea225cb4f1c45c4efe4df9be2a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/ball/assets/Meteor.png"
-dest_files=["res://.godot/imported/Meteor.png-06dadcb0121ed9100561d8c7aceb01a4.ctex"]
+source_file="res://entities/playerpaddle/assets/paddle.old.png"
+dest_files=["res://.godot/imported/paddle.old.png-89adf3ea225cb4f1c45c4efe4df9be2a.ctex"]
 
 [params]
 

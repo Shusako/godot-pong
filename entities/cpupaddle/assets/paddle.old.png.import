@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cd3bqiokdms7p"
-path="res://.godot/imported/Paddle Left-Sheet.png-39b9ac3c6645571f441896097a4f3a22.ctex"
+uid="uid://fqx2kau2twwy"
+path="res://.godot/imported/paddle.old.png-1209381010ef43b59fb8ca0a2b109643.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/playerpaddle/assets/Paddle Left-Sheet.png"
-dest_files=["res://.godot/imported/Paddle Left-Sheet.png-39b9ac3c6645571f441896097a4f3a22.ctex"]
+source_file="res://entities/cpupaddle/assets/paddle.old.png"
+dest_files=["res://.godot/imported/paddle.old.png-1209381010ef43b59fb8ca0a2b109643.ctex"]
 
 [params]
 
